@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Números Super 7</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Números Super 7</h1>
+        <small>Escolha 3 números fixos e o gerador completará o jogo com 4 números aleatórios.</small>
+
+        <p><small>Escolha pelo menos 3 números fixos</small></p>
+        <div class="number-selection">
+            <label for="fixed-number-1">Número Fixo 1:</label>
+            <input type="number" id="fixed-number-1" min="1" max="70" onchange="validateDuplicateNumbers()">
+            
+            <label for="fixed-number-2">Número Fixo 2:</label>
+            <input type="number" id="fixed-number-2" min="1" max="70" onchange="validateDuplicateNumbers()">
+            
+            <label for="fixed-number-3">Número Fixo 3:</label>
+            <input type="number" id="fixed-number-3" min="1" max="70" onchange="validateDuplicateNumbers()">
+        </div>
+        <button onclick="generateNumbers()">Gerar Números</button>
+        <button onclick="saveGame()">Salvar Jogo</button>
+        <button onclick="exportToExcel()">Exportar para Excel</button>
+        <div id="generated-numbers" class="numbers-display"></div>
+        <div id="saved-games" class="numbers-display"></div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
